@@ -18,6 +18,8 @@
   "dependencies": {
     "commander": "^2.2.0",
     "request": "^2.34.0",
-    "nodemailer": "^0.6.1"
+    "nodemailer": "^0.6.1",
+    "underscore": "^1.6.0",
+    "tilde-expansion": "0.0.0"
   }
 }
