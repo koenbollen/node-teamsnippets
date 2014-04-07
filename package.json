@@ -21,6 +21,7 @@
     "nodemailer": "^0.6.1",
     "underscore": "^1.6.0",
     "tilde-expansion": "0.0.0",
-    "moment": "^2.5.1"
+    "moment": "^2.5.1",
+    "prompt": "^0.2.12"
   }
 }
