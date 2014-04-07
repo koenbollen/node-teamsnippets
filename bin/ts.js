@@ -5,6 +5,7 @@ var fs = require('fs');
 var program = require('commander');
 var tilde = require('tilde-expansion');
 var prompt = require('prompt');
+var marked = require('marked');
 
 var ts = require('../lib/ts');
 
@@ -90,10 +91,8 @@ program
     console.log( '    $ ts stage');
     console.log( '    $ ts post\n');
 
-    console.log( '  Protip:\n\n    Change your TeamSnippets.com settings to use Markdown!\n');
-  })
-  .on('--verbose', function() {
-    console.log('asd');
+    console.log( '  Protips:\n\n    - Change your TeamSnippets.com settings to use Markdown!');
+    console.log( '    - To edit records, for now, edit the configfile manually..\n');
   });
 
 program
@@ -137,8 +136,13 @@ program
 program
   .command('stage')
   .description('list record currently on stage')
+  .option('-m, --markdown', 'output stage in markdown format')
   .action(function(options){
     store(program.config, false, function(store, done) {
+      if(options.markdown) {
+        console.log(marked(ts.format_post(store.records, {skip_end:true})));
+        return done(false);
+      }
       if(store.records.length == 0) {
         console.log('# Your TeamSnippets stage is currently clean, get workin\'!')
       } else {
