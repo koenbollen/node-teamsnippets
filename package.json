@@ -1,6 +1,6 @@
 {
   "name": "teamsnippets",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Teamsnippet Commandline Tool",
   "keywords": [
     "teamsnippet",
@@ -11,7 +11,7 @@
   ],
   "author": "Koen Bollen <koen@blendle.nl>",
   "license": "LGPL",
-  "repository": "https://github.com/koenbollen/teamsnippets.git",
+  "repository": "git+https://github.com/koenbollen/teamsnippets.git",
   "bin": {
     "ts": "bin/ts.js"
   },
